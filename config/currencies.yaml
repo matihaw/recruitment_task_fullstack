@@ -1,0 +1,24 @@
+parameters:
+  exchange_rates:
+    USD:
+      buy: -0.05
+      sell: 0.07
+    EUR:
+      buy: -0.05
+      sell: 0.07
+    CZK:
+      buy: ~
+      sell: 0.15
+    IDR:
+      buy: ~
+      sell: 0.15
+    BRL:
+      buy: ~
+      sell: 0.15
+
+  currencies:
+    - USD
+    - EUR
+    - CZK
+    - IDR
+    - BRL

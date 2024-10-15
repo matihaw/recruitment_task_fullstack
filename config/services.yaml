@@ -5,6 +5,9 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
 
+imports:
+    - { resource: 'currencies.yaml' }
+
 services:
     # default configuration for services in *this* file
     _defaults:
@@ -28,3 +31,10 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    App\Services\ExchangeManager:
+        arguments:
+            $currencies: '%currencies%'
+            $cache: '@cache.app'
+    App\Services\ExchangeRateCalculator:
+        arguments:
+            $exchangeRates: '%exchange_rates%'
